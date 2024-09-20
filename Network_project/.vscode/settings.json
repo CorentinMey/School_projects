@@ -1,0 +1,9 @@
+{
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "C:\\Users\\coren\\Documents\\Polytech\\S8\\Java\\Projet_Reseau\\lib\\slf4j-api-1.7.36.jar",
+        "C:\\Users\\coren\\Documents\\Polytech\\S8\\Java\\Projet_Reseau\\lib\\sqlite-jdbc-3.45.2.0.jar"
+    ]
+}
