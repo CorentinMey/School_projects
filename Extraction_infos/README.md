@@ -40,6 +40,8 @@ Finally, the Openpyxl package is a Python library used to interact with Excel fi
 Ensure that you are connected to the internet if you want to search for your PDB file online.
 For offline use, ensure that you have downloaded the PDB file of your protein, and that this file is in the program’s directory.
 
+To launch the program, download the program with all the modules and stock it in a directory. Then launch the "main" file to start the analysis.
+
 The program can generate graphs, which you will need to save manually.
 A FASTA file can also be created in this directory.
 An Excel file with a table of the molecule’s hydrophobicity values can also be created in this directory. From this, you can create a hydrophobicity graph.
