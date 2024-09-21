@@ -1,68 +1,77 @@
-Commencez par installer python sur votre ordinateur
-Assurez vous que le chemin d'accès de votre python est bien répertorié dans vos variables d'environnement
-Afin de pouvoir utiliser convenablement notre programme Python, il faudra installer avant toute
-utilisation 5 packages dans l’invite de commande, biopython, matplotlib, pandas et openpyxl.
-Ouvrez l'invité de commande et effectuez les commandes suivantes:
+## Program Objective:
 
-Sur Windows:
-1) pip install matplotlib
-2) pip install pandas
-3) pip install openpyxl
-4) pip install seaborn matplotlib
-4) pip install biopython
+Analysis of a protein structure in Protein Data Bank (PDB) format either by opening a file or retrieving data through the PDB website. Various analyses will be performed on this data and stored in result files.
 
-- Sur Mac : saisissez « python3.6 -m pip install [nomdupackage] » où 3.6 dans python3.6 doit être
-remplacé par la version de Python installée sur votre ordinateur
+## Features:
 
-Le package Biopython est une bibliothèque Python spécialisée dans le traitement et l'analyse de données
-biologiques qui offre un ensemble de modules et d'outils pour travailler avec des données bioinformatiques,
-tel que l’outil Numpy (bibliothèque servant au calcul numérique).
-Matplotlib nous a été utile pour la création de graphiques.
-La package Pandas est essentielle car c’est une bibliothèque utile pour la manipulation et l&#39;analyse de données
-en Python.
-Pour finir, le package openpyxl est une bibliothèque Python utilisée pour interagir avec des fichiers Excel. Il
-fournit des fonctionnalités permettant de créer, lire, et modifier des fichiers Excel au format xlsx (Open
-XML). Nous avons donc dû l’installer car un module de notre programme nécessite la manipulation de
-données tabulaires avec Excel (pour le calcul du profil d’hydrophobicité).
+    Retrieve the content of a PDB file either by querying the PDB website using the PDB code (URL example: http://files.rcsb.org/view/1CRN.pdb) or by opening a PDB file stored on your hard drive.
+    Retrieve important information about the protein (description, length of the protein, etc.), the experimental method used, along with the associated resolution if available.
+    Build the sequence in FASTA format for this protein and offer to save or display it.
+    Perform an analysis of the protein’s amino acid composition and compare this result with the average frequency of amino acids in a protein (e.g., based on SwissProt).
+    Calculate the hydrophobicity profile of this protein.
+    Detect the possible presence of disulfide bonds, display the list of disulfide bridges, and/or free cysteines.
+    Propose a file format for output that consolidates the different analyses.
+    Create a PDB file of this structure by changing the "Temperature factor or B-factor" field to values based on the physicochemical properties of the residues or their amino acid composition.
+    Calculate the contact matrix of the protein and offer to write a file compatible with visualizing this matrix using a graphical tool (Excel, R, or others).
 
-Assurez vous que vous êtes connecté à internet si vous voulez chercher en ligne votre document pdb. 
-Sinon pour une utilisation hors ligne assurez vous que vous avez télécharger le fichier au format pdb de votre protéine et que ce fichier 
-se trouve dans le dossier de ce programme.
+## How to Use:
 
-Le programme peut vous générer des graphiques que vous devrez enregistrer vous même.
-Un fichier fasta pourra aussi être crée dans ce dossier.
-Un fichier excel avec un tableau des valeurs d'hydrophobicité de la molécule pourra aussi être crée dans ce dossier. Vous pourrez à partir de celui ci créer un graphique d'hydrophobicité.
-Un rapport sera généré dans ce dossier avec les données essentielles de l'analyse du fichier pdb.
-Un nouveau fichier pdb sera créer où les valeurs de b_factor seront remplacés par l'hydrophobicité des résidus selon l'échelle suivante :
-    
-    'ALA': 16.67,     # Hydrophobe non aromatique
-    'VAL': 16.67,     # Hydrophobe non aromatique
-    'LEU': 16.67,     # Hydrophobe non aromatique
-    'ILE': 16.67,     # Hydrophobe non aromatique
-    'MET': 16.67,     # Hydrophobe non aromatique
-    'PRO': 16.67,     # Hydrophobe non aromatique
-    'GLY': 16.67,     # Hydrophobe non aromatique
+Start by installing Python on your computer.
+Ensure that the Python path is correctly listed in your environment variables.
+To properly use our Python program, you must first install 5 packages in the command prompt: Biopython, Matplotlib, Pandas, and Openpyxl.
 
-    'PHE': 33.34,     # Hydrophobe aromatique
-    'TYR': 33.34,     # Hydrophobe aromatique
-    'TRP': 33.34,     # Hydrophobe aromatique
+Open the command prompt and run the following commands:
 
-    'SER': 50.01,     # Polaires neutres
-    'THR': 50.01,     # Polaires neutres
-    'ASN': 50.01,     # Polaires neutres
-    'GLN': 50.01,     # Polaires neutres
-    'CYS': 50.01,     # Polaires neutres
+For Windows:
 
-    'ASP': 66.67,     # Polaires acides
-    'GLU': 66.67,     # Polaires acides
+    pip install matplotlib
+    pip install pandas
+    pip install openpyxl
+    pip install seaborn matplotlib
+    pip install biopython
 
-    'LYS': 83.34,     # Polaires basiques
-    'ARG': 83.34,     # Polaires basiques
-    'HIS': 83.34,     # Polaires basiques
+For Mac: Type python3.6 -m pip install [package name] where 3.6 in python3.6 should be replaced by the Python version installed on your computer.
 
-    'CYS': 99.99      # Acide sulfurique
+The Biopython package is a specialized Python library for processing and analyzing biological data. It provides a set of modules and tools for working with bioinformatics data, such as the Numpy tool (a library used for numerical computing).
+Matplotlib is useful for creating graphs.
+The Pandas package is essential because it is a useful library for data manipulation and analysis in Python.
+Finally, the Openpyxl package is a Python library used to interact with Excel files. It provides functionalities to create, read, and modify Excel files in the xlsx (Open XML) format. We needed to install it because one module of our program requires the manipulation of tabular data with Excel (for calculating the hydrophobicity profile).
 
-Pour visualiser la coloration de la protéine en fonction de son hydrophobicité, ouvrez le fichier pdb crée avec pymol, puis tapez spectrum b dans l'invité de commande.
+Ensure that you are connected to the internet if you want to search for your PDB file online.
+For offline use, ensure that you have downloaded the PDB file of your protein, and that this file is in the program’s directory.
 
-Bonne utilisation !
+The program can generate graphs, which you will need to save manually.
+A FASTA file can also be created in this directory.
+An Excel file with a table of the molecule’s hydrophobicity values can also be created in this directory. From this, you can create a hydrophobicity graph.
+A report will be generated in this directory with the essential data from the PDB file analysis.
+A new PDB file will be created where the B-factor values will be replaced by the hydrophobicity of the residues according to the following scale:
 
+    'ALA': 16.67,     # Non-aromatic hydrophobic
+    'VAL': 16.67,     # Non-aromatic hydrophobic
+    'LEU': 16.67,     # Non-aromatic hydrophobic
+    'ILE': 16.67,     # Non-aromatic hydrophobic
+    'MET': 16.67,     # Non-aromatic hydrophobic
+    'PRO': 16.67,     # Non-aromatic hydrophobic
+
+    'PHE': 33.34,     # Aromatic hydrophobic
+    'TYR': 33.34,     # Aromatic hydrophobic
+    'TRP': 33.34,     # Aromatic hydrophobic
+
+    'SER': 50.01,     # Neutral polar
+    'THR': 50.01,     # Neutral polar
+    'ASN': 50.01,     # Neutral polar
+    'GLN': 50.01,     # Neutral polar
+    'CYS': 50.01,     # Neutral polar
+
+    'ASP': 66.67,     # Acidic polar
+    'GLU': 66.67,     # Acidic polar
+
+    'LYS': 83.34,     # Basic polar
+    'ARG': 83.34,     # Basic polar
+    'HIS': 83.34,     # Basic polar
+
+    'CYS': 99.99      # Sulfuric acid
+
+To visualize the protein’s coloring based on its hydrophobicity, open the created PDB file with PyMOL, then type spectrum b in the command prompt.
+
+Happy usage!
