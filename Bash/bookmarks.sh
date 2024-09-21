@@ -1,5 +1,5 @@
 #!/bin/bash
-#./bookmarks.sh 192.168.37.34 julie
+#./bookmarks.sh adresse_IP nom_utilisateur
 ####
 aide (){
 	echo "Usage: $0 <adresse_IP> <nom_utilisateur>"
